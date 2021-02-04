@@ -1,0 +1,25 @@
+{
+    "nombreApp" : "Componentes",
+    "routes" : [
+        {
+            "route" : "now_playing",
+            "icon" : "assets/icons/icon-now-playing.svg",
+            "label": "En cines"
+        },
+        {
+            "route" : "series",
+            "icon" : "assets/icons/icon-series.svg",
+            "label": "Series TV"
+        },
+        {
+            "route" : "popular",
+            "icon" : "assets/icons/icon-popular.svg",
+            "label": "Populares"
+        },
+        {
+            "route" : "upcomming",
+            "icon" : "assets/icons/icon-upcomming.svg",
+            "label": "Proximos\nestrenos"
+        }
+    ]
+}
