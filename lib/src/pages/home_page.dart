@@ -20,12 +20,10 @@ class HomePage extends StatelessWidget {
     futureMenu = menu.getMenuData();
 
     return Scaffold(
-      backgroundColor: const Color(0xff35495e),
-      body: ListView(
-        children: <Widget>[
-          _getFinder()
-        ],
-      )
+        backgroundColor: const Color(0xff35495e),
+        body: ListView(
+          children: <Widget>[_getFinder()],
+        )
 
         /* Container(   
         color: Colors.amber,     
@@ -38,33 +36,33 @@ class HomePage extends StatelessWidget {
           ],
         )
       ) */
-    );
+        );
   }
 
-  Widget _getFinder(){
-    
+  Widget _getFinder() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
       child: TextField(
         autofocus: false,
         decoration: InputDecoration(
-          filled: true,          
-          hintText: 'Find movie, serie or actor',
-          suffixIcon: Icon(Icons.search, color: Colors.grey,),
-          border: OutlineInputBorder( borderRadius: BorderRadius.circular(30.0)),
-          fillColor: Colors.grey[300],
-          focusColor: Colors.red,
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.transparent,
+            filled: true,
+            hintText: 'Find movie, serie, actor...',
+            suffixIcon: Icon(
+              Icons.search,
+              color: Colors.grey,
             ),
-            borderRadius: BorderRadius.circular(30.0)
-          )
-        ),
-        onChanged: (value){ },
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
+            fillColor: Colors.grey[300],
+            focusColor: Colors.red,
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                ),
+                borderRadius: BorderRadius.circular(30.0))),
+        onChanged: (value) {},
       ),
     );
-
   }
 
   Widget _menu(context) {

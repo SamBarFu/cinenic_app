@@ -6,14 +6,13 @@ import 'src/pages/now_playing_page.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget{
-  
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      initialRoute: 'now_playing',
       routes: {
-        '/' : (BuildContext context) => HomePage(),
+        '/': (BuildContext context) => HomePage(),
         'now_playing': (BuildContext context) => NowPlaying(),
         'series': (BuildContext context) => NowPlaying(),
         'popular': (BuildContext context) => NowPlaying(),
@@ -21,5 +20,4 @@ class MyApp extends StatelessWidget{
       },
     );
   }
-
 }
