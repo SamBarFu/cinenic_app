@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import '../widgets/card_swiper_widget.dart';
+
+//my import
+import 'package:cinenic_app/src/providers/pelicula_provider.dart';
 import '../widgets/horizontal_slider_widget.dart';
 
-//model import
-import 'package:cinenic_app/src/providers/pelicula_provider.dart';
-
-class NowPlaying extends StatelessWidget {
+class PopularsMovie extends StatelessWidget {
   final peliculas = PeliculaProvider();
 
   @override
   Widget build(BuildContext context) {
-    peliculas.getNowPlaying();
+    peliculas.getPopular();
+
     return Container(
       width: double.infinity,
       child: Column(
@@ -20,7 +20,7 @@ class NowPlaying extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
             child: Text(
-              'Now Playing',
+              'Populars',
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w500,

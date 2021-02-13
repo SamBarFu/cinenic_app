@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import '../widgets/card_swiper_widget.dart';
+
+import 'package:cinenic_app/src/providers/serie_provider.dart';
 import '../widgets/horizontal_slider_widget.dart';
 
-//model import
-import 'package:cinenic_app/src/providers/pelicula_provider.dart';
-
-class NowPlaying extends StatelessWidget {
-  final peliculas = PeliculaProvider();
+class Serie extends StatelessWidget {
+  final serieProvider = SerieProvider();
 
   @override
   Widget build(BuildContext context) {
-    peliculas.getNowPlaying();
+    serieProvider.getSeries();
     return Container(
       width: double.infinity,
       child: Column(
@@ -28,7 +26,7 @@ class NowPlaying extends StatelessWidget {
             ),
           ),
           StreamBuilder(
-            stream: peliculas.streamMovie,
+            stream: serieProvider.streamSerie,
             builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
               if (snapshot.hasData) {
                 return HorizontalSlider(movies: snapshot.data);

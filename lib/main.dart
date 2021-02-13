@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: 'now_playing',
+      initialRoute: '/',
       routes: {
         '/': (BuildContext context) => HomePage(),
         'now_playing': (BuildContext context) => NowPlaying(),

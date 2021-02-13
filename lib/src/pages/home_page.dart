@@ -1,3 +1,4 @@
+import 'package:cinenic_app/src/pages/serie_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,33 +10,54 @@ import '../widgets/card_swiper_widget.dart';
 import '../widgets/horizontal_slider_widget.dart';
 import '../widgets/button_back_widget.dart';
 import 'package:cinenic_app/src/providers/menu_provider.dart';
+import '../pages/now_playing_page.dart';
+import '../pages/populars_movie_page.dart';
+import '../pages/populars_movie_page.dart';
 
 class HomePage extends StatelessWidget {
   final peliculas = PeliculaProvider();
   final menu = MenuProvider();
-  Future<List<dynamic>> futureMenu;
+  //Future<List<dynamic>> futureMenu;
 
   @override
   Widget build(context) {
-    futureMenu = menu.getMenuData();
+    //futureMenu = menu.getMenuData();
 
     return Scaffold(
         backgroundColor: const Color(0xff35495e),
         body: ListView(
-          children: <Widget>[_getFinder()],
+          children: <Widget>[
+            _getFinder(),
+            NowPlaying(), //now playing movies
+            SizedBox(
+              height: 20.0,
+            ),
+            PopularsMovie(), //populars movies
+            SizedBox(
+              height: 20.0,
+            ),
+            Serie(), //series tv
+            SizedBox(
+              height: 20.0,
+            ),
+            /*NowPlaying(), //uncomming movies
+            SizedBox(
+              height: 20.0,
+            ),*/
+          ],
         )
 
         /* Container(   
-        color: Colors.amber,     
-        //padding: EdgeInsets.only(top: 100.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            _getSwiper(),
-            _populars(context)
-          ],
-        )
-      ) */
+      color: Colors.amber,     
+      //padding: EdgeInsets.only(top: 100.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          _getSwiper(),
+          _populars(context)
+        ],
+      )
+    ) */
         );
   }
 
@@ -65,7 +87,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _menu(context) {
+  /*Widget _menu(context) {
     return FutureBuilder(
         future: futureMenu,
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
@@ -83,7 +105,7 @@ class HomePage extends StatelessWidget {
             );
           }
         });
-  }
+  }*/
 
   List<Widget> _getButton(BuildContext context, List menuItems) {
     List<Widget> listItem = [];
